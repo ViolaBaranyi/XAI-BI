@@ -1,0 +1,4 @@
+modell,cv_roc_auc,cv_szoras,accuracy,precision,recall,f1,roc_auc
+Logisztikus regresszió,0.8459,0.0156,0.8021,0.6599,0.5215,0.5826,0.8403
+Döntési fa,0.8288,0.0141,0.795,0.6228,0.5726,0.5966,0.8284
+XGBoost,0.8394,0.0189,0.7843,0.6169,0.4892,0.5457,0.8333
