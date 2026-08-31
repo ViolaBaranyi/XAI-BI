@@ -12,8 +12,6 @@ megjeleníti a magyarázat mellé annak megbízhatóságát is.
 - **Adat:** IBM Telco Customer Churn (7043 ügyfél, 19 jellemző)
 - **Modellek:** logisztikus regresszió, döntési fa, XGBoost
 - **Magyarázók:** SHAP, LIME
-- **Szerző:** Baranyi Viola · **Témavezető:** Dr. Király Sándor
-- **Keret:** EKÖP-26-I-1, Eszterházy Károly Katolikus Egyetem
 
 ## Telepítés
 
@@ -48,9 +46,15 @@ src/
 data/
   raw/               nyers CSV (nincs verziókövetve)
   processed/         train.csv, test.csv (nincs verziókövetve)
+<<<<<<< HEAD
 models/              betanított modellek (2. héttől)
 reports/             metrics.csv + figures/ (ábrák a dolgozathoz)
 NAPLO.md             kutatási napló - hetente vezetni!
+=======
+models/              betanított modellek 
+reports/figures/     ábrák a dolgozathoz
+NAPLO.md             
+>>>>>>> 100f1fd3533e31ef937c42d171b8558cb0e3d127
 ```
 
 ## Ütemterv
@@ -59,8 +63,13 @@ NAPLO.md             kutatási napló - hetente vezetni!
 |-----|---------|---------|
 | 1 | Repo, adat, EDA, train/test bontás | ✅ |
 | 2 | Három modell betanítása, metrikák | ✅ |
+<<<<<<< HEAD
 | 3 | SHAP és LIME integrálása | ✅ |
 | 4 | Stabilitás- és egyetértés-metrika megtervezése | ✅ |
+=======
+| 3 | SHAP és LIME integrálása | ⬜ |
+| 4 | Stabilitás- és egyetértés-metrika megtervezése | ⬜ |
+>>>>>>> 100f1fd3533e31ef937c42d171b8558cb0e3d127
 | 5 | Kísérlet futtatása, eredmények | ⬜ |
 | 6 | Streamlit dashboard váz | ⬜ |
 | 7 | Dashboard: modellváltó + stabilitásjelzés | ⬜ |
