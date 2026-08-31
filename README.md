@@ -29,6 +29,9 @@ pip install -r requirements.txt
 python -m src.download_data     # adat letöltése a data/raw/ mappába
 python -m src.prepare           # tisztítás + train/test bontás
 python -m src.eda               # feltáró elemzés, ábrák a reports/figures/ mappába
+python -m src.train             # három modell betanítása, metrikatáblázat
+python -m src.explain           # SHAP és LIME magyarázatok
+python -m src.stability         # stabilitásmérés (demó 10 eseten)
 ```
 
 ## Mappastruktúra
@@ -39,11 +42,14 @@ src/
   download_data.py   adatletöltés
   prepare.py         tisztítás, bontás, előfeldolgozó pipeline
   eda.py             feltáró elemzés
+  train.py           modellek betanítása, metrikák, ROC
+  explain.py         SHAP és LIME egységes interfésszel
+  stability.py       stabilitás- és egyetértés-metrikák
 data/
   raw/               nyers CSV (nincs verziókövetve)
   processed/         train.csv, test.csv (nincs verziókövetve)
 models/              betanított modellek (2. héttől)
-reports/figures/     ábrák a dolgozathoz
+reports/             metrics.csv + figures/ (ábrák a dolgozathoz)
 NAPLO.md             kutatási napló - hetente vezetni!
 ```
 
@@ -52,9 +58,9 @@ NAPLO.md             kutatási napló - hetente vezetni!
 | Hét | Feladat | Állapot |
 |-----|---------|---------|
 | 1 | Repo, adat, EDA, train/test bontás | ✅ |
-| 2 | Három modell betanítása, metrikák | ⬜ |
-| 3 | SHAP és LIME integrálása | ⬜ |
-| 4 | Stabilitás- és egyetértés-metrika megtervezése | ⬜ |
+| 2 | Három modell betanítása, metrikák | ✅ |
+| 3 | SHAP és LIME integrálása | ✅ |
+| 4 | Stabilitás- és egyetértés-metrika megtervezése | ✅ |
 | 5 | Kísérlet futtatása, eredmények | ⬜ |
 | 6 | Streamlit dashboard váz | ⬜ |
 | 7 | Dashboard: modellváltó + stabilitásjelzés | ⬜ |
