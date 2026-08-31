@@ -12,8 +12,6 @@ megjeleníti a magyarázat mellé annak megbízhatóságát is.
 - **Adat:** IBM Telco Customer Churn (7043 ügyfél, 19 jellemző)
 - **Modellek:** logisztikus regresszió, döntési fa, XGBoost
 - **Magyarázók:** SHAP, LIME
-- **Szerző:** Baranyi Viola · **Témavezető:** Dr. Király Sándor
-- **Keret:** EKÖP-26-I-1, Eszterházy Károly Katolikus Egyetem
 
 ## Telepítés
 
