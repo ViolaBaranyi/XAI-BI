@@ -42,9 +42,9 @@ src/
 data/
   raw/               nyers CSV (nincs verziókövetve)
   processed/         train.csv, test.csv (nincs verziókövetve)
-models/              betanított modellek (2. héttől)
+models/              betanított modellek 
 reports/figures/     ábrák a dolgozathoz
-NAPLO.md             kutatási napló - hetente vezetni!
+NAPLO.md             
 ```
 
 ## Ütemterv
@@ -52,7 +52,7 @@ NAPLO.md             kutatási napló - hetente vezetni!
 | Hét | Feladat | Állapot |
 |-----|---------|---------|
 | 1 | Repo, adat, EDA, train/test bontás | ✅ |
-| 2 | Három modell betanítása, metrikák | ⬜ |
+| 2 | Három modell betanítása, metrikák | ✅ |
 | 3 | SHAP és LIME integrálása | ⬜ |
 | 4 | Stabilitás- és egyetértés-metrika megtervezése | ⬜ |
 | 5 | Kísérlet futtatása, eredmények | ⬜ |
