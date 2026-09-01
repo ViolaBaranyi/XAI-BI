@@ -1,14 +1,5 @@
 # Kutatási napló
 
-> Ezt hetente vezesd. A 8-9. héten, amikor írni kell, ez lesz a
-> módszertani fejezet nyersanyaga - utólag nem fogsz emlékezni rá,
-> miért döntöttél úgy, ahogy.
-
-Minden hétnél három dolgot rögzíts: **mit csináltam**, **milyen döntést
-hoztam és miért**, **mi akadt el**.
-
----
-
 ## 1. hét
 
 **Mit csináltam:** repo létrehozása, IBM Telco Churn adat letöltése,
@@ -297,6 +288,96 @@ LIME zajküszöb (önkonzisztencia): logreg 0,827; fa 0,813; XGBoost 0,789.
 ---
 
 ## 6. hét
+
+**Mit csináltam:** működő Streamlit dashboard váza - ügyfélválasztó,
+kockázati előrejelzés, SHAP magyarázat, ügyféladatok.
+
+**Döntések:**
+
+- *Streamlit, nem Power BI.* A Power BI Python-vizuáljának korlátai
+  (nincs interaktivitás a szkripten belül, lassú újrarajzolás) miatt a
+  SHAP-magyarázat ügyfelenkénti újraszámítása ott nem lenne járható.
+  A Streamlit ugyanazt a `src/` kódot importálja, amit a kísérletek
+  használnak - így garantált, hogy a felület pontosan ugyanazokat a
+  magyarázatokat mutatja, mint amiket mértem.
+- *Gyorsítótárazás (`st.cache_data`, `st.cache_resource`).* A modell
+  betöltése és az előrejelzés futása másodpercekig tart; enélkül minden
+  kattintásnál újraszámolna.
+- *Alapértelmezetten csak az 50% feletti kockázatú ügyfelek.* Egy valódi
+  BI felületen a felhasználó nem 1405 ügyfelet néz végig, hanem a
+  beavatkozást igénylőket. A teszthalmazban 289 ilyen ügyfél van,
+  átlagosan 68%-os kockázattal.
+- *A magyarázat eredeti jellemzőkre összevonva jelenik meg,* nem a
+  one-hot oszlopok szintjén. Egy üzleti felhasználónak a "Contract"
+  jelent valamit, a "Contract_Two year" kevésbé.
+- *Feliratban rögzítettem, hogy a magyarázat a MODELL működését írja le,
+  nem ok-okozati viszonyt.* Ez a 2408.16987 cikk fő figyelmeztetése, és
+  egy BI felületen könnyű elfelejteni.
+
+**Amit szándékosan NEM tettem bele (7. hétre marad):**
+
+- modellváltó (a három modell összehasonlítása a felületen)
+- SHAP/LIME kapcsoló
+- stabilitásjelzés - ez a kutatásom fő hozzáadott értéke
+
+**Elakadás:** -
+
+---
+
+## 7. hét
+
+**Mit csináltam:** a dashboard kiegészítése modellváltóval, SHAP/LIME
+kapcsolóval és stabilitásjelzéssel. Ez utóbbi a munka fő hozzáadott értéke.
+
+**A stabilitásjelzés működése:**
+
+A kiválasztott ügyfél folytonos adatait 8 alkalommal enyhén megzavarjuk
+(a szórás 5%-ával), újra magyarázatot kérünk, és megnézzük, mennyire marad
+ugyanaz a top-5 lista. Ugyanaz a metrika, amit az 5. héten 200 ügyfélen
+mértem - csak most egyetlen esetre, futásidőben.
+
+Három szinten jelenik meg:
+
+1. *Összesített stabilitási pontszám* + szöveges értékelés (stabil /
+   közepes / ingatag).
+2. *Fő tényező megmaradási aránya* - külön kiemelve, mert egy dashboard
+   fejlécében ezt emelnék ki, tehát ennek ingadozása közvetlen üzleti
+   kockázat.
+3. *Oszloponkénti halványítás* az ábrán: ha egy jellemző a zavart
+   futtatások felében sem került be a top-5-be, halványan jelenik meg.
+   Így a felhasználó ránézésre látja, mely tényezőkben bízhat.
+
+**Döntések:**
+
+- *A küszöbök az 5. heti eloszlásokból származnak,* nem hasraütésre.
+  0,90 felett stabil, 0,75-0,90 közepes, alatta ingatag.
+- *LIME választása esetén a jelzés külön figyelmeztetést kap.* A mérés
+  szerint a LIME saját zajküszöbe kb. 0,86, tehát az ennél magasabb érték
+  nem stabilitást jelent, hanem érzéketlenséget. A felület ezt kimondja,
+  és SHAP-ra irányít.
+- *8 ismétlés.* Kompromisszum: elég a becsléshez, és SHAP-nál 0,6
+  másodperc alatt lefut, LIME-nál 1,2 alatt - a felület használható marad.
+- *A modellváltó szándékosan a felületen van.* Így a felhasználó saját
+  szemével látja, hogy két, gyakorlatilag azonos pontosságú modell más
+  magyarázatot ad ugyanarra az ügyfélre. Ez a Rashomon-hatás bemutatása
+  demonstráció formájában.
+
+**Megfigyelés a tesztelés közben:**
+
+A #748-as ügyfélnél (XGBoost, SHAP) a stabilitási pontszám 0,88 - első
+ránézésre elfogadható -, DE a fő tényező megmaradási aránya **0%**.
+Vagyis a top-5 lista nagyrészt stabil, mégis minden egyes zavart
+futtatásnál más tényező került az élre. Ez pontosan az a helyzet, amit
+egy hagyományos dashboard elrejtene: a felület magabiztosan kiírná a
+"legfontosabb okot", ami valójában a véletlenen múlik.
+
+Ez az eset kerül majd be a dolgozatba szemléltetésként.
+
+**Elakadás:** -
+
+---
+
+## 8. hét
 
 **Mit csináltam:**
 

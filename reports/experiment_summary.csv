@@ -1,25 +1,25 @@
 modell,modszer,metrika,n,atlag,szoras,median,ci_also,ci_felso
-logreg,shap,zaj 1% top5,600,0.997,0.023,1.0,0.995,0.999
-logreg,shap,zaj 5% top5,600,0.99,0.043,1.0,0.987,0.994
-logreg,shap,zaj 10% top5,600,0.978,0.064,1.0,0.972,0.983
-logreg,lime,zaj 1% top5,600,0.829,0.126,0.8,0.819,0.839
-logreg,lime,zaj 5% top5,600,0.83,0.121,0.8,0.82,0.84
-logreg,lime,zaj 10% top5,600,0.828,0.126,0.8,0.819,0.839
-logreg,shap-lime,SHAP vs LIME top5,200,0.786,0.137,0.8,0.767,0.805
-logreg,lime-lime,LIME zajküszöb top5,600,0.834,0.125,0.8,0.824,0.844
-tree,shap,zaj 1% top5,600,0.995,0.031,1.0,0.992,0.997
-tree,shap,zaj 5% top5,600,0.971,0.077,1.0,0.964,0.976
-tree,shap,zaj 10% top5,600,0.958,0.093,1.0,0.95,0.965
-tree,lime,zaj 1% top5,600,0.817,0.12,0.8,0.807,0.827
-tree,lime,zaj 5% top5,600,0.807,0.123,0.8,0.797,0.817
-tree,lime,zaj 10% top5,600,0.801,0.127,0.8,0.79,0.811
-tree,shap-lime,SHAP vs LIME top5,200,0.669,0.134,0.6,0.649,0.687
-tree,lime-lime,LIME zajküszöb top5,600,0.813,0.118,0.8,0.803,0.822
-xgboost,shap,zaj 1% top5,600,0.944,0.094,1.0,0.936,0.952
-xgboost,shap,zaj 5% top5,600,0.87,0.126,0.8,0.86,0.879
-xgboost,shap,zaj 10% top5,600,0.84,0.133,0.8,0.829,0.851
-xgboost,lime,zaj 1% top5,600,0.861,0.118,0.8,0.852,0.87
-xgboost,lime,zaj 5% top5,600,0.863,0.124,0.8,0.853,0.872
-xgboost,lime,zaj 10% top5,600,0.858,0.125,0.8,0.847,0.867
-xgboost,shap-lime,SHAP vs LIME top5,200,0.71,0.143,0.8,0.691,0.73
-xgboost,lime-lime,LIME zajküszöb top5,600,0.864,0.123,0.8,0.855,0.874
+logreg,shap,zaj 1% top5,300,0.999,0.016,1.0,0.997,1.0
+logreg,shap,zaj 5% top5,300,0.99,0.044,1.0,0.985,0.995
+logreg,shap,zaj 10% top5,300,0.98,0.06,1.0,0.973,0.987
+logreg,lime,zaj 1% top5,300,0.837,0.119,0.8,0.824,0.851
+logreg,lime,zaj 5% top5,300,0.826,0.129,0.8,0.811,0.84
+logreg,lime,zaj 10% top5,300,0.821,0.123,0.8,0.807,0.834
+logreg,shap-lime,SHAP vs LIME top5,100,0.788,0.13,0.8,0.764,0.814
+logreg,lime-lime,LIME zajküszöb top5,300,0.839,0.121,0.8,0.825,0.851
+tree,shap,zaj 1% top5,300,0.993,0.04,1.0,0.988,0.997
+tree,shap,zaj 5% top5,300,0.969,0.084,1.0,0.959,0.979
+tree,shap,zaj 10% top5,300,0.953,0.099,1.0,0.941,0.964
+tree,lime,zaj 1% top5,300,0.803,0.125,0.8,0.789,0.817
+tree,lime,zaj 5% top5,300,0.809,0.126,0.8,0.795,0.823
+tree,lime,zaj 10% top5,300,0.801,0.131,0.8,0.787,0.815
+tree,shap-lime,SHAP vs LIME top5,100,0.64,0.133,0.6,0.614,0.666
+tree,lime-lime,LIME zajküszöb top5,300,0.803,0.129,0.8,0.787,0.817
+xgboost,shap,zaj 1% top5,300,0.94,0.095,1.0,0.929,0.951
+xgboost,shap,zaj 5% top5,300,0.888,0.118,0.8,0.875,0.901
+xgboost,shap,zaj 10% top5,300,0.851,0.122,0.8,0.836,0.865
+xgboost,lime,zaj 1% top5,300,0.875,0.117,0.8,0.862,0.889
+xgboost,lime,zaj 5% top5,300,0.867,0.123,0.8,0.853,0.881
+xgboost,lime,zaj 10% top5,300,0.856,0.117,0.8,0.843,0.869
+xgboost,shap-lime,SHAP vs LIME top5,100,0.724,0.126,0.8,0.698,0.748
+xgboost,lime-lime,LIME zajküszöb top5,300,0.866,0.123,0.8,0.853,0.88
